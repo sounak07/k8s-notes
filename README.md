@@ -1,8 +1,20 @@
 # KUBERNETES
 
+ - [Major Components of K8s](#major-components-of-k8s)
+ - [Kubernetes Architecture](#kubernetes-architecture)
+
 ## Major Components of k8s
 
 ![alt text](/resources/k8Comps.png "k8")
+
+- [PODs](#pods)
+- [Service](#service)
+- [ConfigMap](#configmap)
+- [Secrets](#secrets)
+- [ConfigMap](#configmap)
+- [Deployments in K8s](#deployments)
+- [StateFULSets in K8s](#statefulset)
+
 
 ### PODs
 #
@@ -21,7 +33,6 @@
 - Request is directed to ingress which forwards the request to service
 
 ![alt text](/resources/k8-service3.png "k8")
-
 
 
 ### ConfigMap
@@ -44,7 +55,7 @@
 ### Deployments
 #
 - A blue print to define number of replicas you would want to run. Scale up/ scale down is also possible. Limited to stateless services.
-- Databases can't be replicated databases as it has a state.
+- Databases can't be replicated.
 
 ![alt text](/resources/deployments.png "dep")
 
@@ -60,5 +71,10 @@
 ![alt text](/resources/overall.png "sfs")
 
 - Replications allows high availability
+
+
+## Kubernetes Architecture
+
+
 
 
