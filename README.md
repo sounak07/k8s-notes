@@ -160,8 +160,9 @@ kubectl Commands :
  - kubectl logs [pod-name]
  - kubectl exec -it [pod-name] -- bin/bash
  - kubectl delete deployment [deployment-name] // delete a deployment
- - kubectl apply -f [config-file.yaml] // to apply/re-apply yaml file 
- - kubectl delete -f [config-file.yaml] // to delete yaml file 
+ - kubectl apply -f [config-file.yaml] // to apply/re-apply yaml file
+ - kubectl delete -f [config-file.yaml] // to delete yaml file and service/deployment
+ - kubectl get deployment nginx-deployment -o yaml > nginx-result.yml // gets detailed config
 
 ```
 
@@ -181,6 +182,16 @@ There are 3 parts in the config file:
 - Service uses Label to make a connection with deployments and its pods.
 
 ![alt text](/resources/config3.png "sfs")
+
+
+### Local Demo App
+
+`Note: Order of creation matters !`
+
+- Create Secret config file 
+- Apply secret config file
+
+![alt text](/resources/secret.png "sfs")
 
 
 
