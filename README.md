@@ -74,7 +74,7 @@
 
 
 ## Kubernetes Architecture
-#
+
 ### Kubelets and Kube Proxy
 #
 ![alt text](/resources/kubelets.png "sfs")
@@ -122,5 +122,66 @@ Steps:
     - install all the master / worker node processes
     - add it to the cluster
 ```
+
+
+### Minikube
+- A dev setup component where both master and worker nodes run in a single node for easy dev setup.
+
+### Kubectl
+- A command line client for kubernetes to interact with clusters of k8s.
+
+### Installation
+
+- Hyperkit
+- kubectl
+- Minikube
+
+![alt text](/resources/abstraction.png "sfs")
+### Commands
+
+```bash
+Start a k8 cluster -> minikube start --vm-driver=hyperkit
+Minikube status -> minikube status
+```
+
+![alt text](/resources/basic-commands.png "sfs")
+![alt text](/resources/basic-commands-2.png "sfs")
+
+```
+kubectl Commands : 
+
+ - kubectl get nodes
+ - kubectl get pod
+ - kubectl get services
+ - kubectl create deployment nginx-depl --image=image [dry-run] [other options]
+ - kubectl get replicaset // To get a replica-set created automatically
+ - kubectl edit deployment [deployment-name]
+ - kubectl describe pod [pod-name]
+ - kubectl logs [pod-name]
+ - kubectl exec -it [pod-name] -- bin/bash
+ - kubectl delete deployment [deployment-name] // delete a deployment
+ - kubectl apply -f [config-file.yaml] // to apply/re-apply yaml file 
+ - kubectl delete -f [config-file.yaml] // to delete yaml file 
+
+```
+
+### Kubernetes Config file
+
+There are 3 parts in the config file:
+- MetaData
+- Specification
+- Status 
+    -> Automatically added by k8s which is used to track changes. Data is received by k8s from etcd
+
+
+![alt text](/resources/config1.png "sfs")
+![alt text](/resources/config2.png "sfs")
+
+- Label is used to connect pods with deployments
+- Service uses Label to make a connection with deployments and its pods.
+
+![alt text](/resources/config3.png "sfs")
+
+
 
 
