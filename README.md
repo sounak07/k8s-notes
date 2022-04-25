@@ -190,8 +190,34 @@ There are 3 parts in the config file:
 
 - Create Secret config file 
 - Apply secret config file
+- Create mongo-db deployment
 
 ![alt text](/resources/secret.png "sfs")
+
+
+### Namespaces 
+
+- Can be used to group together different types of services/resources
+- Two teams using same clusters , namespace are useful
+- Can be used to deploy staging and dev using common services like ELK or nginx-ingress
+- Can be used in blue Green/blue deployments using common services like ELK or nginx-ingress
+- Limiting resource to a particular namespace
+- ConfigMap and secrets are restricted to namespaces
+- Service can be shared across namespaces
+
+`Note: Use kubens to change your default namespace`
+
+#### How to create a resource with a namespace
+
+![alt text](/resources/namespace.png "sfs")
+
+
+### K8s Ingress
+
+- Inorder to use ingress we will create a internal controller. Requests on ingress will be directed to internal service which will eventually reach pods.
+
+![alt text](/resources/ingress.png "sfs")
+![alt text](/resources/ingress2.png "sfs")
 
 
 
