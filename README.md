@@ -147,24 +147,6 @@ Minikube status -> minikube status
 ![alt text](/resources/basic-commands.png "sfs")
 ![alt text](/resources/basic-commands-2.png "sfs")
 
-```
-kubectl Commands : 
-
- - kubectl get nodes
- - kubectl get pod
- - kubectl get services
- - kubectl create deployment nginx-depl --image=image [dry-run] [other options]
- - kubectl get replicaset // To get a replica-set created automatically
- - kubectl edit deployment [deployment-name]
- - kubectl describe pod [pod-name]
- - kubectl logs [pod-name]
- - kubectl exec -it [pod-name] -- bin/bash
- - kubectl delete deployment [deployment-name] // delete a deployment
- - kubectl apply -f [config-file.yaml] // to apply/re-apply yaml file
- - kubectl delete -f [config-file.yaml] // to delete yaml file and service/deployment
- - kubectl get deployment nginx-deployment -o yaml > nginx-result.yml // gets detailed config
-
-```
 
 ### Kubernetes Config file
 
@@ -218,6 +200,74 @@ There are 3 parts in the config file:
 
 ![alt text](/resources/ingress.png "sfs")
 ![alt text](/resources/ingress2.png "sfs")
+
+Steps:
+
+- Install ingress Controller on minikube
+- Create ingress rules
+- Add hosts and IP in /etc/hosts
+
+`Requests -> minikube -> ALB/Nginx (Imp. for prod) -> Ingress Controller -> Ingress Rules -> Service`
+
+![alt text](/resources/ingress3.png "ing")
+![alt text](/resources/ingress4.png "ing")
+![alt text](/resources/ingress5.png "ing")
+
+#### TLS in Ingress
+
+![alt text](/resources/tlsingress.png "ing")
+![alt text](/resources/tlsingress2.png "ing")
+
+
+### Helm k8s
+
+![alt text](/resources/helm.png "ing")
+![alt text](/resources/helm2.png "ing")
+![alt text](/resources/helm3.png "ing")
+![alt text](/resources/helm4.png "ing")
+![alt text](/resources/helm5.png "ing")
+![alt text](/resources/helm6.png "ing")
+![alt text](/resources/helm7.png "ing")
+
+
+`helm install <chartname>`
+`helm upgrade <chartname>`
+`helm rollback <chartname>`
+
+- Tiller isn't there anymore as it has too much permissions which makes it a secuirity issue.It has been deprecated in Helm 3
+
+### Volumes in K8s
+
+![alt text](/resources/vol1.png "vol")
+![alt text](/resources/vol2.png "vol")
+![alt text](/resources/vol3.png "vol")
+![alt text](/resources/vol4.png "vol")
+
+Admin creates storage resource -> User claims for pvc -> Attach to POD -> containers
+
+```
+kubectl Commands : 
+
+ - kubectl get nodes
+ - kubectl get pod
+ - kubectl get services
+ - kubectl create deployment nginx-depl --image=image [dry-run] [other options]
+ - kubectl get replicaset // To get a replica-set created automatically
+ - kubectl edit deployment [deployment-name]
+ - kubectl describe pod [pod-name]
+ - kubectl logs [pod-name]
+ - kubectl exec -it [pod-name] -- bin/bash
+ - kubectl delete deployment [deployment-name] // delete a deployment
+ - kubectl apply -f [config-file.yaml] // to apply/re-apply yaml file
+ - kubectl delete -f [config-file.yaml] // to delete yaml file and service/deployment
+ - kubectl get deployment nginx-deployment -o yaml > nginx-result.yml // gets detailed config
+ - kubectl get ns  // get all namespaces
+ - kubectl get ingress -n [namespace]
+ - kubectl describe ingress [ingress-name] -n [namespace]  // to display ingress backend
+ - kubectl get all -n [namespace]  // to get all details about a namespace
+
+```
+
 
 
 
