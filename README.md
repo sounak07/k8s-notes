@@ -41,6 +41,8 @@
 
 - Its like env to where we can pass configurations of an applications like name etc.
 
+[More info](https://www.youtube.com/watch?v=OW244LxB4oI)
+
 ### Secrets
 #
 ![alt text](/resources/configMapsecret.png "secret")
@@ -229,12 +231,22 @@ Steps:
 ![alt text](/resources/helm6.png "ing")
 ![alt text](/resources/helm7.png "ing")
 
-
-`helm install <chartname>`
-`helm upgrade <chartname>`
-`helm rollback <chartname>`
-
+```
+helm install <chartname> -n [namespace] [helm-chart-folder] --dry-run
+helm upgrade <chartname>
+helm rollback <chartname>
+helm list -n [namespace]
+```
 - Tiller isn't there anymore as it has too much permissions which makes it a secuirity issue.It has been deprecated in Helm 3
+
+[More info](https://www.youtube.com/watch?v=YDZ_i6OhjhQ&t=182s)
+
+```
+Notes:
+
+Helm will kind of help us with dynamic values that will be picked up from values.yaml or from cli using --set 
+
+```
 
 ### Volumes in K8s
 
@@ -242,8 +254,12 @@ Steps:
 ![alt text](/resources/vol2.png "vol")
 ![alt text](/resources/vol3.png "vol")
 ![alt text](/resources/vol4.png "vol")
+![alt text](/resources/vol5.png "vol")
 
-Admin creates storage resource -> User claims for pvc -> Attach to POD -> containers
+- Admin creates storage resource -> User claims for pvc -> Attach to POD -> containers
+- Multiple types of volumes can be mounted to pods like config map files, vol etc
+- Storage class can be used to create persistent volume clusters
+
 
 ```
 kubectl Commands : 
@@ -268,7 +284,9 @@ kubectl Commands :
 
 ```
 
+### Resouces
 
+[Kubernetes Playlist](https://www.youtube.com/playlist?list=PLh4KH3LtJvRRcSwTZgmW60lkhVrzKU1jA)
 
 
 
